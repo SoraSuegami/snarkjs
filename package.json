@@ -40,10 +40,10 @@
   "dependencies": {
     "blake2b-wasm": "https://github.com/jbaylina/blake2b-wasm.git",
     "circom_runtime": "0.1.3",
-    "fastfile": "git+https://github.com/SoraSuegami/r1csfile.git",
+    "fastfile": "0.0.13",
     "ffjavascript": "0.2.10",
     "logplease": "^1.2.15",
-    "r1csfile": "0.0.12"
+    "r1csfile": "git+https://github.com/SoraSuegami/r1csfile.git"
   },
   "devDependencies": {
     "chai": "^4.2.0",
