@@ -332,8 +332,10 @@ async function r1csExportJSON(params, options) {
     if (options.verbose) Logger.setLogLevel("DEBUG");
 
     const r1csObj = await r1cs.exportJson(r1csName, logger);
-
-    const S = JSON.stringify(utils.stringifyBigInts(r1csObj), null, 1);
+    let converted = utils.stringifyBigInts(r1csObj);
+    if(converted.constraints!=null) converted.constraints = JSON.stringify(converted.constraints);
+    if(converted.map!=null) converted.map = JSON.stringify(converted.map);
+    const S = JSON.stringify(converted, null, 1);
     await fs.promises.writeFile(jsonName, S);
 
     return 0;
